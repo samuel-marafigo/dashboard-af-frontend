@@ -25,6 +25,7 @@
   {"Id": 334, "Name": "UBS Quissisana", "Coordinates": [-25.54703403811825, -49.15570193393776]},
   {"Id": 35, "Name": "UBS Riacho Doce", "Coordinates": [-25.540668251267864, -49.15501059180445]},
   {"Id": 4, "Name": "UBS São Marcos", "Coordinates": [-25.607096890168798, -49.16923090159924]},
-  {"Id": 7, "Name": "UBS Xingu", "Coordinates": [-25.54888320252453, -49.17717306629038]}
+  {"Id": 7, "Name": "UBS Xingu", "Coordinates": [-25.54888320252453, -49.17717306629038]},
+  {"Id": 771, "Name": "UPA Rui Barbosa", "Coordinates": [-25.5494894, -49.2070488]}
 ]
 
