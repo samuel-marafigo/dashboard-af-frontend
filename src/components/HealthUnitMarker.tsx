@@ -37,7 +37,7 @@ const HealthUnitMarker: React.FC<HealthUnitMarkerProps> = ({ unit, quantity, pre
     <div className={fadeClass}>
       <Marker position={unit.Coordinates} icon={icon}>
         <Popup>
-          UBS {unit.Name}<br />
+          {unit.Name}<br />
           Atendimentos farmacêuticos hoje: {quantity}
         </Popup>
       </Marker>

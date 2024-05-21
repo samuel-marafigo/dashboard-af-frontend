@@ -1,0 +1,39 @@
+.change-tracker {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    background-color: rgb(39, 39, 39);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000; /* Ensure it appears above the map */
+  }
+  
+  .change-tracker.collapsed {
+    max-height: 40px;
+  }
+  
+  .change-tracker.expanded {
+    max-height: 300px;
+  }
+  
+  .toggle-button {
+    background-color: rgb(39, 39, 39);;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .changes-list {
+    max-height: 260px;
+    overflow-y: auto;
+  }
+  
+  .change-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }

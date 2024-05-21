@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
+import healthUnitData from '../data/healthUnitData.json';
 
 interface QuantityData {
   id: number;
   quantity: number;
+}
+
+interface ChangeData {
+  time: string;
+  unitName: string;
+  oldQuantity: number;
+  newQuantity: number;
 }
 
 const useFetchQuantities = () => {
@@ -10,6 +18,7 @@ const useFetchQuantities = () => {
   const [prevQuantities, setPrevQuantities] = useState<QuantityData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [changes, setChanges] = useState<ChangeData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +28,23 @@ const useFetchQuantities = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
+
+        // Calculate changes
+        const newChanges: ChangeData[] = [];
+        data.forEach((newQuantity: QuantityData) => {
+          const prevQuantity = quantities.find(q => q.id === newQuantity.id);
+          if (prevQuantity && newQuantity.quantity !== prevQuantity.quantity) {
+            const time = new Date().toLocaleTimeString();
+            newChanges.push({
+              time,
+              unitName: healthUnitData.find(unit => unit.Id === newQuantity.id)?.Name || 'Unknown',
+              oldQuantity: prevQuantity.quantity,
+              newQuantity: newQuantity.quantity
+            });
+          }
+        });
+
+        setChanges(prev => [...newChanges, ...prev]); // Append new changes
         setPrevQuantities(quantities); // Update previous quantities before setting new ones
         setQuantities(data);
       } catch (error: unknown) {
@@ -39,7 +65,7 @@ const useFetchQuantities = () => {
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [quantities]);
 
-  return { quantities, prevQuantities, loading, error };
+  return { quantities, prevQuantities, loading, error, changes };
 };
 
 export default useFetchQuantities;

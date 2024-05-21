@@ -6,9 +6,10 @@ import healthUnitData from '../data/healthUnitData.json';
 import { HealthUnitEntity } from '../entities/HealthUnitEntity';
 import useFetchQuantities from '../hooks/useFetchQuantities';
 import HealthUnitMarker from './HealthUnitMarker';
+import ChangeTracker from './ChangeTracker';
 
 const App: React.FC = () => {
-  const { quantities, prevQuantities, loading, error } = useFetchQuantities();
+  const { quantities, prevQuantities, loading, error, changes } = useFetchQuantities();
 
   const healthUnitEstablishments: HealthUnitEntity[] = healthUnitData.map(unit => ({
     Id: unit.Id,
@@ -35,21 +36,24 @@ const App: React.FC = () => {
   }
 
   return (
-    <MapContainer center={[-25.5394, -49.1997]} zoom={13}>
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-
-      {healthUnitEstablishments.map((unit) => (
-        <HealthUnitMarker
-          key={unit.Id}
-          unit={unit}
-          quantity={getQuantity(unit.Id)}
-          prevQuantity={getPrevQuantity(unit.Id)}
+    <div className="app-container">
+      <MapContainer center={[-25.5394, -49.1997]} zoom={13}>
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-      ))}
-    </MapContainer>
+
+        {healthUnitEstablishments.map((unit) => (
+          <HealthUnitMarker
+            key={unit.Id}
+            unit={unit}
+            quantity={getQuantity(unit.Id)}
+            prevQuantity={getPrevQuantity(unit.Id)}
+          />
+        ))}
+      </MapContainer>
+      <ChangeTracker changes={changes} />
+    </div>
   );
 };
 
