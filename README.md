@@ -87,7 +87,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Video Demo
 
-<p align="center">
-  <a href="https://youtu.be/CpwBWbUmQRQ?feature=shared">
-  </a>
-</p>
+[![](https://markdown-videos-api.jorgenkh.no/youtube/CpwBWbUmQRQ)](https://www.youtube.com/watch?v=CpwBWbUmQRQ)
