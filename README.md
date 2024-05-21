@@ -87,4 +87,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Video Demo
 
-[![](https://markdown-videos-api.jorgenkh.no/youtube/CpwBWbUmQRQ)](https://www.youtube.com/watch?v=CpwBWbUmQRQ)
+<video width="320" height="240" controls>
+  <source src="https://www.youtube.com/watch?v=CpwBWbUmQRQ">
+  Your browser does not support the video tag.
+</video>
