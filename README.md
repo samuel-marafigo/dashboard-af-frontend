@@ -1,8 +1,11 @@
 # AF-Dashboard-frontend
 
 This is the frontend project for the AF Dashboard application. It is built using React, Vite, and TypeScript. 
+
 The project aims to provide data visualiazation through an interactive map regarding the pharmaceutical assistance activities for the municipality of São José dos Pinhais.
+
 This project uses public data obtained through the municipality's [transparency website](https://saudetransparente2.sjp.pr.gov.br/saudetransparente/#/atendimentos-farmaceuticos)
+
 The backend for this project is available at: https://github.com/samuel-marafigo/dashboard-af-backend
 
 ## Table of Contents
