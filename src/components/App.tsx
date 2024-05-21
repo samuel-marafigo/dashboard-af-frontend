@@ -1,13 +1,14 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import "leaflet/dist/leaflet.css";
 import '../styles/App.css';
 import healthUnitData from '../data/healthUnitData.json';
 import { HealthUnitEntity } from '../entities/HealthUnitEntity';
 import useFetchQuantities from '../hooks/useFetchQuantities';
+import HealthUnitMarker from './HealthUnitMarker';
 
-function App() {
-  const { quantities, loading, error } = useFetchQuantities();
+const App: React.FC = () => {
+  const { quantities, prevQuantities, loading, error } = useFetchQuantities();
 
   const healthUnitEstablishments: HealthUnitEntity[] = healthUnitData.map(unit => ({
     Id: unit.Id,
@@ -17,6 +18,11 @@ function App() {
 
   const getQuantity = (id: number) => {
     const unit = quantities.find(q => q.id === id);
+    return unit ? unit.quantity : 'N/A';
+  };
+
+  const getPrevQuantity = (id: number) => {
+    const unit = prevQuantities.find(q => q.id === id);
     return unit ? unit.quantity : 'N/A';
   };
 
@@ -36,15 +42,15 @@ function App() {
       />
 
       {healthUnitEstablishments.map((unit) => (
-        <Marker key={unit.Id} position={unit.Coordinates}>
-          <Popup>
-            {unit.Name}<br />
-            Atendimentos farmacêuticos hoje: {getQuantity(unit.Id)}
-          </Popup>
-        </Marker>
+        <HealthUnitMarker
+          key={unit.Id}
+          unit={unit}
+          quantity={getQuantity(unit.Id)}
+          prevQuantity={getPrevQuantity(unit.Id)}
+        />
       ))}
     </MapContainer>
   );
-}
+};
 
 export default App;

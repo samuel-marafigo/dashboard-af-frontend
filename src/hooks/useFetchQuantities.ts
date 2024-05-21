@@ -7,6 +7,7 @@ interface QuantityData {
 
 const useFetchQuantities = () => {
   const [quantities, setQuantities] = useState<QuantityData[]>([]);
+  const [prevQuantities, setPrevQuantities] = useState<QuantityData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -18,6 +19,7 @@ const useFetchQuantities = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
+        setPrevQuantities(quantities); // Update previous quantities before setting new ones
         setQuantities(data);
       } catch (error: unknown) {
         if (error instanceof Error) {
@@ -32,12 +34,12 @@ const useFetchQuantities = () => {
 
     fetchData();
 
-    const interval = setInterval(fetchData, 60000); // Fetch every minute
+    const interval = setInterval(fetchData, 30000); // Fetch every minute
 
     return () => clearInterval(interval); // Clean up interval on component unmount
-  }, []);
+  }, [quantities]);
 
-  return { quantities, loading, error };
+  return { quantities, prevQuantities, loading, error };
 };
 
 export default useFetchQuantities;
