@@ -1,6 +1,6 @@
 # AF-Dashboard-frontend
 
-This is the frontend project for the AF Dashboard application. It is built using React, Vite, and TypeScript. 
+This is the frontend project for the AF Dashboard application (AF stands for "Assistência Farmacêutica" or "Pharmaceutical Assistance"). It is built using React, Vite, and TypeScript. 
 
 The project aims to provide data visualiazation through an interactive map regarding the pharmaceutical assistance activities for the municipality of São José dos Pinhais.
 
@@ -84,3 +84,9 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Video Demo
+
+<p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CpwBWbUmQRQ?si=71a8bDqf7t6w3fZi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
