@@ -87,7 +87,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Video Demo
 
-<video width="320" height="240" controls>
-  <source src="https://www.youtube.com/watch?v=CpwBWbUmQRQ">
-  Your browser does not support the video tag.
-</video>
+https://github.com/samuel-marafigo/dashboard-af-frontend/assets/125743714/19e839bd-51b9-4e16-aa8a-7921c680900f
