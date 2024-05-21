@@ -3,6 +3,7 @@
 This is the frontend project for the AF Dashboard application. It is built using React, Vite, and TypeScript. 
 The project aims to provide data visualiazation through an interactive map regarding the pharmaceutical assistance activities for the municipality of São José dos Pinhais.
 This project uses public data obtained through the municipality's [transparency website](https://saudetransparente2.sjp.pr.gov.br/saudetransparente/#/atendimentos-farmaceuticos)
+The backend for this project is available at: https://github.com/samuel-marafigo/dashboard-af-backend
 
 ## Table of Contents
 
@@ -45,7 +46,7 @@ This project uses public data obtained through the municipality's [transparency 
 
 ### Running with Docker
 
-1. Ensure the backend is running on localhost:8080.
+1. Ensure the [backend](https://github.com/samuel-marafigo/dashboard-af-backend) is running on localhost:8080.
 2. Ensure you have Docker installed on your machine.
 3. Build the Docker image:
 
@@ -57,7 +58,7 @@ This project uses public data obtained through the municipality's [transparency 
 
 ### Running without Docker
 
-1. Ensure the backend is running on localhost:8080.
+1. Ensure the [backend](https://github.com/samuel-marafigo/dashboard-af-backend) is running on localhost:8080.
 2. Start the development server:
 
     ```bash
