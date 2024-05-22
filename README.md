@@ -87,4 +87,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Video Demo
 
-https://github.com/samuel-marafigo/dashboard-af-frontend/assets/125743714/19e839bd-51b9-4e16-aa8a-7921c680900f
+
+https://github.com/samuel-marafigo/dashboard-af-frontend/assets/125743714/ec12b3ea-e789-4e11-846d-0972d033dbef
+
